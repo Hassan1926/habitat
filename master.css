@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: black url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+    background-size: cover;
+    animation: twinkling 25s linear infinite;
+    overflow: hidden;
+}
+
+@keyframes twinkling {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -1000px 1000px;
+    }
+}
+
+
+
+
+
+
+h1 {
+    padding: 20px;
+    color: #fff;
+    font-size: 4rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    animation: floatXY 6s ease-in-out infinite;
+    text-shadow: 0 0 15px #00f0ff;
+    margin: auto;
+    position: relative;
+    top: 250px;
+
+}
+
+@keyframes floatXY {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    25% {
+        transform: translate(10px, -15px);
+    }
+
+    50% {
+        transform: translate(-10px, -25px);
+    }
+
+    75% {
+        transform: translate(-20px, -10px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+
+
+
+model-viewer {
+    width: 500px;
+    height: 800px;
+    position: absolute;
+}
+
+
+.launch-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 18px 50px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #ff6ec7, #7366ff, #00ffe5);
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    box-shadow: 0 0 15px rgba(0, 255, 229, 0.8),
+        0 0 30px rgba(115, 102, 255, 0.6),
+        0 0 45px rgba(255, 110, 199, 0.5);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s;
+}
+
+.launch-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 25px rgba(0, 255, 229, 1),
+        0 0 50px rgba(115, 102, 255, 0.9),
+        0 0 70px rgba(255, 110, 199, 0.8);
+}
+
+.launch-btn:active {
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+
+
+.rocket {
+    position: absolute;
+    bottom: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 80px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 5;
+}
+
+
+.rocket.launch {
+    opacity: 1;
+    animation: fly 3s ease-in forwards;
+}
+
+@keyframes fly {
+    0% {
+        bottom: -150px;
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        bottom: 50%;
+        transform: translateX(-50%) scale(1.2);
+    }
+
+    100% {
+        bottom: 120%;
+        transform: translateX(-50%) scale(0.8);
+    }
+}

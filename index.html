@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="master.css">
+    <link rel="preload" href="/astronaut.glb" as="fetch" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Create Your Own Habitat</h1>
+
+    <button class="launch-btn" onclick="launchRocket()">Lets Go 🚀</button>
+    <div class="rocket">🚀</div>
+
+    <div class="astronaut">
+        <model-viewer src="/astronaut.glb" alt="A 3D model of a astronaut" camera-controls disable-zoom disabled-pan
+            disable-tap></model-viewer>
+    </div>
+
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+    <script>
+        function launchRocket() {
+            const rocket = document.querySelector('.rocket');
+            rocket.classList.add('launch');
+            setTimeout(() => {
+                window.open("habitat.html", "_blank"); 
+            }, 3000); 
+        }
+    </script>
+</body>
+
+</html>

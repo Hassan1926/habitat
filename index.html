@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="master.css">
-    <link rel="preload" href="/astronaut.glb" as="fetch" crossorigin="anonymous">
+    
 </head>
 
 <body>
@@ -15,10 +15,10 @@
     <button class="launch-btn" onclick="launchRocket()">Lets Go 🚀</button>
     <div class="rocket">🚀</div>
 
-    <div class="astronaut">
-        <model-viewer src="https://github.com/Hassan1926/habitat/releases/download/v1.0/astronaut.glb" alt="A 3D model of a astronaut" camera-controls disable-zoom disabled-pan
-            disable-tap></model-viewer>
-    </div>
+
+    <model-viewer src="/astronaut.compressed.glb" alt="A 3D model of a astronaut" camera-controls disable-zoom disabled-pan
+        disable-tap></model-viewer>
+
 
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 
@@ -27,11 +27,10 @@
             const rocket = document.querySelector('.rocket');
             rocket.classList.add('launch');
             setTimeout(() => {
-                window.open("habitat.html", "_blank"); 
-            }, 3000); 
+                window.open("habitat.html", "_blank");
+            }, 3000);
         }
     </script>
 </body>
-
 
 </html>
